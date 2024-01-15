@@ -6,6 +6,7 @@
     ./options.nix
     ./remap.nix
     ./lsp.nix
+    ./none-ls.nix
     ./telescope.nix
     ./cmp.nix
     ./git.nix
