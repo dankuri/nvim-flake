@@ -8,6 +8,7 @@
     ./lsp.nix
     ./telescope.nix
     ./cmp.nix
+    ./git.nix
   ];
 
   colorschemes.dracula.enable = true;
