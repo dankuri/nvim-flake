@@ -9,6 +9,8 @@
       };
 
       lspBuf = {
+        "K" = "hover";
+        "gr" = "references";
         "gd" = "definition";
         "gI" = "implementation";
         "<leader>ca" = "code_action";
