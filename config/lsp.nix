@@ -28,7 +28,6 @@
       cssls.enable = true;
       tailwindcss.enable = true;
       emmet_ls.enable = true;
-      eslint.enable = true;
       jsonls.enable = true;
 
       dockerls.enable = true;
