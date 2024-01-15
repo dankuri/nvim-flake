@@ -109,5 +109,11 @@
       action = ":set wrap!<CR>"; 
       options.desc = "toggle wrap";
     }
+    {
+      mode = "n";
+      key = "<leader>u";
+      action = "<cmd>UndotreeToggle<CR>";
+      options.desc = "toggle undotree";
+    }
   ];
 }
