@@ -1,6 +1,4 @@
-{pkgs, ...}:
-
-{
+{pkgs, ...}: {
   # Import all your configuration modules here
   imports = [
     ./options.nix
@@ -11,9 +9,6 @@
     ./cmp.nix
     ./git.nix
   ];
-
-  colorschemes.dracula.enable = true;
-  colorschemes.dracula.package = pkgs.vimPlugins.dracula-nvim;
 
   plugins = {
     comment-nvim.enable = true;
@@ -30,6 +25,7 @@
       enable = true;
       viewOptions.showHidden = true;
     };
+    fidget.enable = true;
     nvim-autopairs.enable = true;
     treesitter = {
       enable = true;
@@ -50,12 +46,13 @@
     which-key.enable = true;
   };
 
-  extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons];
+  extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons dracula-nvim];
   extraConfigLua = ''
     require("nvim-surround").setup()
     require("dracula").setup({
       show_end_of_buffer = true,
       transparent_bg = true,
     })
+    vim.cmd.colorscheme("dracula")
   '';
 }
