@@ -25,7 +25,10 @@
       enable = true;
       viewOptions.showHidden = true;
     };
-    fidget.enable = true;
+    fidget = {
+      enable = true;
+      progress.ignoreDoneAlready = true;
+    };
     nvim-autopairs.enable = true;
     treesitter = {
       enable = true;
@@ -49,10 +52,18 @@
   extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons dracula-nvim];
   extraConfigLua = ''
     require("nvim-surround").setup()
+
     require("dracula").setup({
       show_end_of_buffer = true,
       transparent_bg = true,
     })
     vim.cmd.colorscheme("dracula")
+
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or "rounded"
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
   '';
 }
