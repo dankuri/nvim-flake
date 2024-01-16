@@ -4,15 +4,33 @@
 
     keymaps = {
       diagnostic = {
-        "]d" = "goto_next";
-        "[d" = "goto_prev";
+        "]d" = {
+          action = "goto_next";
+          desc = "LSP: goto next diagnostic";
+        };
+        "[d" = {
+          action = "goto_prev";
+          desc = "LSP: goto prev diagnostic";
+        };
       };
 
       lspBuf = {
-        "K" = "hover";
-        "<leader>ca" = "code_action";
-        "<leader>rn" = "rename";
-        "<leader>fm" = "format";
+        "K" = {
+          action = "hover";
+          desc = "LSP: hover";
+        };
+        "<leader>ca" = {
+          action = "code_action";
+          desc = "LSP: code action";
+        };
+        "<leader>rn" = {
+          action = "rename";
+          desc = "LSP: rename";
+        };
+        "<leader>fm" = {
+          action = "format";
+          desc = "LSP: format";
+        };
       };
     };
 
