@@ -13,10 +13,9 @@
         alejandra.enable = true;
         rustfmt.enable = true;
         stylua.enable = true;
-        # need to add them myself
-        # gofumpt.enable = true;
+        gofumpt.enable = true;
         golines.enable = true;
-        # goimports_reviser = true;
+        goimports_reviser.enable = true;
       };
       diagnostics = {
         staticcheck.enable = true;
