@@ -53,7 +53,7 @@
 
   autoGroups = {LspFormatting = {};};
 
-  extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons dracula-nvim];
+  extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons dracula-nvim friendly-snippets];
   extraConfigLua = ''
     require("nvim-surround").setup()
 
