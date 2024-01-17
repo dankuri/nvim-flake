@@ -8,6 +8,7 @@
     ./telescope.nix
     ./cmp.nix
     ./git.nix
+    ./harpoon.nix
   ];
 
   plugins = {
@@ -30,6 +31,7 @@
       progress.ignoreDoneAlready = true;
     };
     nvim-autopairs.enable = true;
+    ts-autotag.enable = true;
     treesitter = {
       enable = true;
       indent = true;
