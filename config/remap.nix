@@ -111,6 +111,12 @@
     }
     {
       mode = "n";
+      key = "<leader>tf";
+      action = ":ToggleFormat<CR>";
+      options.desc = "toggle format";
+    }
+    {
+      mode = "n";
       key = "<leader>u";
       action = "<cmd>UndotreeToggle<CR>";
       options.desc = "toggle undotree";

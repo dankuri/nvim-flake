@@ -51,16 +51,20 @@
     which-key.enable = true;
   };
 
+  autoGroups = {LspFormatting = {};};
+
   extraPlugins = with pkgs.vimPlugins; [nvim-surround vim-sleuth nvim-web-devicons dracula-nvim];
   extraConfigLua = ''
     require("nvim-surround").setup()
 
+    -- nixvim's dracula is a version for vim
     require("dracula").setup({
       show_end_of_buffer = true,
       transparent_bg = true,
     })
     vim.cmd.colorscheme("dracula")
 
+    -- adds borders to floating previews (lsp hover, diagnostics, ...)
     local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
       opts = opts or {}
